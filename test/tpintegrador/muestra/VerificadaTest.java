@@ -7,8 +7,6 @@ import static org.mockito.Mockito.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import tpintegrador.muestra.Muestra;
-import tpintegrador.muestra.Verificada;
 import tpintegrador.opinion.TipoDeOpinion;
 import tpintegrador.usuario.Usuario;
 
