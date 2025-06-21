@@ -47,6 +47,7 @@ public class Muestra  implements Observable{
 	public Ubicacion getUbicacion() {return ubicacion;}
 	public Usuario getAutor() {return autor;}
 	public List<Opinion> getOpiniones() {return opiniones;}
+	public boolean estaVerificada() {return estado.estaVerificada();}
 
 	
 	
@@ -89,8 +90,12 @@ public class Muestra  implements Observable{
 
 	@Override
 	public void notify(Observable o, Evento e) {
-		// TODO Auto-generated method stub
-		
+		List<Interesado> aNotificar = interesados.get(e); 
+		if(aNotificar != null) {         //Puede ocurrir que nadie se haya registrado al evento 
+			for(Interesado i : aNotificar) {
+				i.update(o, e);
+			}
+		}
 	}
 
 }
