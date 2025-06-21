@@ -2,6 +2,7 @@ package tpintegrador.muestra;
 
 import java.util.List;
 
+import tpintegrador.Evento;
 import tpintegrador.opinion.Opinion;
 import tpintegrador.opinion.TipoDeOpinion;
 import tpintegrador.usuario.Usuario;
@@ -23,6 +24,7 @@ public class SoloExpertos extends EstadoMuestra {
 		if(usuario.esExperto() && tipos.contains(tipo)) {
 			muestra.agregarOpinion(new Opinion(tipo, usuario));
 			muestra.setEstado(new Verificada(tipo));
+			muestra.notify(muestra, Evento.VERIFICACION); 
 		}
 		else if(usuario.esExperto()) { 
 			muestra.agregarOpinion(new Opinion(tipo, usuario)); //Simplemente agrego a la lista porque no es una opinion repetida

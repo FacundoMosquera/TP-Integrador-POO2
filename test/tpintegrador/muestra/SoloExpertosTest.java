@@ -11,6 +11,7 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import tpintegrador.Evento;
 import tpintegrador.opinion.Opinion;
 import tpintegrador.opinion.TipoDeOpinion;
 import tpintegrador.usuario.Usuario;
@@ -95,6 +96,7 @@ public class SoloExpertosTest {
 		
 		verify(muestra, times(1)).agregarOpinion(any(Opinion.class));
 		verify(muestra, times(1)).setEstado(any(Verificada.class));
+		verify(muestra, times(1)).notify(muestra, Evento.VERIFICACION);
 	}
 	
 	@Test
