@@ -5,10 +5,10 @@ import java.util.List;
 
 import tpintegrador.muestra.Muestra;
 
-public class FiltorAND implements Filtro{
+public class FiltroAND implements Filtro{
 	private List<Filtro> filtros;
 	
-	public FiltorAND(Filtro...filtros) {
+	public FiltroAND(Filtro...filtros) {
 		this.filtros = Arrays.asList(filtros);
 	}
 	
