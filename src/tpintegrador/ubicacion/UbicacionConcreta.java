@@ -16,7 +16,7 @@ public class UbicacionConcreta implements Ubicacion {
 		}
 		this.latitud  = latitud;
 		this.longitud = longitud;
-		this.formula  = new DistanciaEuclidiana(); 
+		this.formula  = new DistanciaHaversine(); 
 	}
 	
 	@Override
