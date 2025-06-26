@@ -200,7 +200,7 @@ public class MuestraTest {
 		muestraBasica.nuevaOpinion(TipoDeOpinion.PHTIA_CHINCHE, userExperto1);
 		muestraBasica.nuevaOpinion(TipoDeOpinion.PHTIA_CHINCHE, userExperto2); //La muestra queda verificada por los expertos
 		
-		verify(interesado, times(1)).update(muestraBasica, Evento.VERIFICACION);
+		verify(interesado, times(1)).update(muestraBasica, Evento.VERIFICACION, muestraBasica);
 	}
 	
 	@Test 
@@ -223,7 +223,7 @@ public class MuestraTest {
 		assertDoesNotThrow(() -> muestraBasica.removeInteresado(interesado, Evento.NUEVA_MUESTRA));  //Le envio mensaje
 		muestraBasica.nuevaOpinion(TipoDeOpinion.PHTIA_CHINCHE, userExperto2); // La muestra se verifica y dispara la notificacion
 		
-		verify(interesado, times(1)).update(muestraBasica, Evento.VERIFICACION);
+		verify(interesado, times(1)).update(muestraBasica, Evento.VERIFICACION, muestraBasica);
 		
 	}
 }

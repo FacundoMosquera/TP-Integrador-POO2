@@ -3,6 +3,8 @@ package tpintegrador.organizacion;
 import tpintegrador.ubicacion.Ubicacion;
 import tpintegrador.zonadecobertura.ZonaDeCobertura;
 import tpintegrador.Evento;
+import tpintegrador.Interesado;
+import tpintegrador.Observable;
 import tpintegrador.muestra.Muestra;
 
 public class Organizacion implements Interesado {
@@ -52,11 +54,16 @@ public class Organizacion implements Interesado {
 		this.funcionalidadVerificacion = f;
 	}
 	
+
+
 	@Override
-	public void update(ZonaDeCobertura zona, Evento evento, Muestra muestra) {
+	public void update(Observable o, Evento evento, Object dato) {
+		ZonaDeCobertura zona = (ZonaDeCobertura) o;
+		Muestra muestra = (Muestra) dato;
+		
 		switch(evento) {
-		case NUEVA_MUESTRA -> funcionalidadNuevaMuestra.nuevoEvento(this, zona, muestra);
-		case VERIFICACION -> funcionalidadVerificacion.nuevoEvento(this, zona, muestra);
+		case NUEVA_MUESTRA -> this.getFuncionalidadNuevaMuestra().nuevoEvento(this, zona, muestra);
+		case VERIFICACION  -> this.getFuncionalidadVerificacion().nuevoEvento(this, zona, muestra);
 		}
 	}
 	

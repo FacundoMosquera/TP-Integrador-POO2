@@ -90,11 +90,11 @@ public class Muestra  implements Observable{
 	}
 
 	@Override
-	public void notify(Observable o, Evento e) {
+	public void notify(Observable o, Evento e, Object dato) {
 		List<Interesado> aNotificar = interesados.get(e); 
 		if(aNotificar != null) {         //Puede ocurrir que nadie se haya registrado al evento 
 			for(Interesado i : aNotificar) {
-				i.update(o, e);
+				i.update(o, e, dato);
 			}
 		}
 	}

@@ -24,7 +24,7 @@ public class SoloExpertos extends EstadoMuestra {
 		if(usuario.esExperto() && tipos.contains(tipo)) {
 			muestra.agregarOpinion(new Opinion(tipo, usuario));
 			muestra.setEstado(new Verificada(tipo));
-			muestra.notify(muestra, Evento.VERIFICACION); 
+			muestra.notify(muestra, Evento.VERIFICACION, muestra); 
 		}
 		else if(usuario.esExperto()) { 
 			muestra.agregarOpinion(new Opinion(tipo, usuario)); //Simplemente agrego a la lista porque no es una opinion repetida

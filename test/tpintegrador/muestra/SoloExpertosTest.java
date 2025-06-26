@@ -96,7 +96,7 @@ public class SoloExpertosTest {
 		
 		verify(muestra, times(1)).agregarOpinion(any(Opinion.class));
 		verify(muestra, times(1)).setEstado(any(Verificada.class));
-		verify(muestra, times(1)).notify(muestra, Evento.VERIFICACION);
+		verify(muestra, times(1)).notify(muestra, Evento.VERIFICACION, muestra);
 	}
 	
 	@Test
