@@ -51,6 +51,7 @@ public class MuestraTest {
 		
 		muestraInicializacion = new Muestra(foto, TipoDeOpinion.CHINCHE_FOLIADA, autor, ubicacion);
 		
+		verify(autor, times(1)).agregarMuestraEnviada(muestraInicializacion);
 		assertEquals(1, muestraInicializacion.getOpiniones().size()); //Arranca con una opinión
 		assertEquals(autor, muestraInicializacion.getOpiniones().get(0).getUsuario()); // Esa opinión es la del autor
 	}

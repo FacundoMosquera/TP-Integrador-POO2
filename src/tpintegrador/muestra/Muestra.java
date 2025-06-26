@@ -38,7 +38,7 @@ public class Muestra  implements Observable{
 		this.interesados     = new HashMap<>();
 		this.opiniones       = new ArrayList<>();
 		this.estado.nuevaOpinion(this, tipo, usuario);
-		
+		usuario.agregarMuestraEnviada(this);
 	}
 
 	
