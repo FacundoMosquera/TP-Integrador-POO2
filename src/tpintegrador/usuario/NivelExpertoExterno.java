@@ -1,6 +1,6 @@
 package tpintegrador.usuario;
 
-public class NivelExpertoExterno implements NivelExpertise {
+public class NivelExpertoExterno extends NivelExpertise {
 
 	@Override
 	public boolean esExperto(Usuario u) {

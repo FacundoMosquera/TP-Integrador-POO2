@@ -1,6 +1,6 @@
 package tpintegrador.usuario;
 
-public class NivelExperto implements NivelExpertise {
+public class NivelExperto extends NivelExpertise {
     @Override
     public boolean esExperto(Usuario u) {
         return true;
@@ -8,7 +8,7 @@ public class NivelExperto implements NivelExpertise {
 
     @Override
     public void verificarCambioNivel(Usuario u) {
-        if (!(u.enviadosEnXDias(30) > 10 && u.revisionesEnXDias(30) > 20)) {
+        if (!this.condicionEsExperto(u)) {
             u.setNivel(new NivelBasico());
         }
     }
